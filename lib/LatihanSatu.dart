@@ -1,37 +1,57 @@
 import 'package:flutter/material.dart';
 import 'icon_menu.dart';
+import 'package:colorlizer/colorlizer.dart';
 
-class LatihanSatu extends StatelessWidget {
+class LatihanSatu extends StatefulWidget {
+  @override
+  State<LatihanSatu> createState() => _LatihanSatuState();
+}
+
+class _LatihanSatuState extends State<LatihanSatu> {
+  ColorLizer colorlizer = ColorLizer();
+  Color? gantiWarna;
+
   @override
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(
         title: Text('Praktek 1 Pertemuan 3'),
       ),
-      body: Container(
-        child: Row(
-          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-          children: [
-            IconMenu(
-              gambarIcon: Icons.call,
-              teksLabel: 'Calls',
-              warnaIcon: Colors.green,
-              warnaTeks: Colors.green,
+      body: Column(
+        children: [
+          Container(
+            child: Row(
+              mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+              children: [
+                IconMenu(
+                  gambarIcon: Icons.call,
+                  teksLabel: 'Calls',
+                  warnaIcon: gantiWarna,
+                  warnaTeks: gantiWarna,
+                ),
+                IconMenu(
+                  gambarIcon: Icons.message,
+                  teksLabel: 'Messages',
+                  warnaIcon: gantiWarna,
+                  warnaTeks: gantiWarna,
+                ),
+                IconMenu(
+                  gambarIcon: Icons.contacts,
+                  teksLabel: 'Contacts',
+                  warnaIcon: gantiWarna,
+                  warnaTeks: gantiWarna,
+                ),
+              ],
             ),
-            IconMenu(
-              gambarIcon: Icons.message,
-              teksLabel: 'Messages',
-              warnaIcon: Colors.red,
-              warnaTeks: Colors.red,
-            ),
-            IconMenu(
-              gambarIcon: Icons.contacts,
-              teksLabel: 'Contacts',
-              warnaIcon: Colors.purple,
-              warnaTeks: Colors.purple,
-            ),
-          ],
-        ),
+          ),
+          ElevatedButton(
+            onPressed: () {
+              gantiWarna = colorlizer.getRandomColors();
+              setState(() {});
+            },
+            child: Text('Change Color'),
+          ),
+        ],
       ),
     );
   }

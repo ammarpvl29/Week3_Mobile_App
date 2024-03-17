@@ -41,6 +41,14 @@ packages:
       url: "https://pub.dev"
     source: hosted
     version: "1.18.0"
+  colorlizer:
+    dependency: "direct main"
+    description:
+      name: colorlizer
+      sha256: "40a0d4a597ad569879b40dafc5306a970db8833e0ba1b67e9f2a2a7aefde77f4"
+      url: "https://pub.dev"
+    source: hosted
+    version: "0.0.4"
   cupertino_icons:
     dependency: "direct main"
     description:
@@ -210,3 +218,4 @@ packages:
     version: "13.0.0"
 sdks:
   dart: ">=3.3.0 <4.0.0"
+  flutter: ">=1.17.0"
